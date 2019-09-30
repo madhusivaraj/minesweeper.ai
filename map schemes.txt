@@ -1,0 +1,33 @@
+environment and agent scheme
+
+enviro:
+map is dXd square matrix (list of lists)
+place n mines at rand coordinates
+coord is either mine (-1)
+or is a number indicating num of mines touching (0-8)
+
+basic agent (from section 2.1):
+for each cell, keep track of
+	mine or safe
+	if safe, num mines touching
+	num of safe squares identified (for sure) around it
+	num of mines identified (for sure) around it
+	num of hidden squres around it
+
+general agent:
+has its own "maps" representing what it knows
+needs 4 agent maps
+each cell of these four maps contains the following:
+	1. mine/clue/unkown map
+		mine = -1
+		clue = num 0-8
+		unknown = 9
+	2. num safe squares identified (for sure) around it
+		unknown = 9
+		num safe = 0-8
+	3. num mines identified (for sure) around it (ie flagged)
+		unknown = 9
+		num mines = 1-8
+	4. num hidden squares around it
+		unkown = 9
+		num hidden = 0-8
