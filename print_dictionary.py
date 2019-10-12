@@ -5,13 +5,13 @@
 import math
 
 def print_dictionary(dic):
-    d = round(math.sqrt(len(dic)))
+    d = round(math.sqrt(len(dic))) # calculates environement dimension, d, as sqrt of dictionary length
     lis = []
-    for i in range(d):
+    for i in range(d): # for loops create a d by d list full of 9's which will be filled int
         lis.append([])
         for j in range(d):
             lis[i].append(9)
-    for i in range(d):
+    for i in range(d): # for loops fill in the list with dictionary entries from appropriate coordinates
         for j in range(d):
             lis[i][j] = dic[(i,j)]
     print('\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in lis]))
