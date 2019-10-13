@@ -48,9 +48,12 @@ def base_agent(environment, total_mines):
             while (x, y) in mine_or_safe: # while it's already been seen
                 (x, y) = (random.randint(0, d - 1), random.randint(0, d - 1)) # new rand
             cells_accounted += 1 # chooses random; accounted for because now it's been investigated
-
+            
+###################################################################################################################
+# If it's a mine, note it:
         if (environment[x][y] == -1): # if it's a mine
             mine_or_safe[(x, y)] = -1 # record on final map
+            
 ###################################################################################################################
 # If it's a clue, investigate cells surrounding current cell:
         else: # if it's a clue
@@ -92,6 +95,7 @@ def base_agent(environment, total_mines):
                 for (a, b) in curr_hidden:
                     mine_or_safe[(a, b)] = 0
                     safes.append((a, b))
+                    
 ##################################################################################################################
 # Finish, score, and print
     correct = 0
