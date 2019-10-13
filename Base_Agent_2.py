@@ -55,7 +55,7 @@ def base_agent(environment, total_mines):
             mine_or_safe[(x, y)] = -1 # record on final map
             
 ###################################################################################################################
-# If it's a clue, investigate cells surrounding current cell:
+# If it's a clue, note the knowledge of the cells surrounding current cell:
         else: # if it's a clue
             safe_num = 0 # tally of known safe cells around current cell
             mines_num = 0 # tally of known mines around current cell
