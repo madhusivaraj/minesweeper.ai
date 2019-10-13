@@ -4,7 +4,6 @@
 # Changed main while condition to "while len(mine_or_safe) != size:"
 # Added more comments
 # Removed "discovered" and replaced one instance of it with "mine_or_safe"
-# Moved instances of "cells_accounted += 1" to make code structure more consistent
 # Added if statement to the cell investigation for loops to account for case where cell has been flagged
 # Added score calculator, with score defined the way Dr. Cowan re-defined it in the most recent lecture
 # Defined "print_dictionary" function at top
@@ -94,7 +93,7 @@ def base_agent(environment, total_mines):
                     mine_or_safe[(a, b)] = 0
                     safes.append((a, b))
 ##################################################################################################################
-# Finish, score, and return
+# Finish, score, and print
     correct = 0
     wrong = 0
     for i in range(d):
