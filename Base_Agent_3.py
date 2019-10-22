@@ -136,7 +136,23 @@ def base_agent_3(environment, total_mines):
 ######################################################################################################################
 
 # Driver script
-d = 12 # map dimension
-total_mines = 30 # total number of mines in the environment
-environment = environment(d, total_mines) # creates environment
-score = base_agent_3(environment, total_mines) # plays minesweeper; prints mine_or_safe dictionary (final board state)
+print("Please input your desired map dimension (ie. '8' for 8x8 board): ")
+dim = int(input()) # map dimension
+print("Please input your desired total number of mines on the board: ")
+total_mines = int(input()) # total number of mines in the environment
+if pow(dim,2) >= total_mines:
+    environment = environment(dim, total_mines) # creates environment
+    score = base_agent_3(environment, total_mines) # plays minesweeper; prints mine_or_safe dictionary (final board state)
+else:
+    print("ERROR: Invalid Input - The total number of mines exceeds the number of positions on the board. Please try again.")
+    print("*****")
+    print("Please input your desired map dimension (ie. '8' for 8x8 board): ")
+    dim = int(input())  # map dimension
+    print("Please input your desired total number of mines on the board: ")
+    total_mines = int(input())  # total number of mines in the environment
+    if pow(dim, 2) >= total_mines:
+        environment = environment(dim, total_mines)  # creates environment
+        score = base_agent_3(environment,
+                             total_mines)  # plays minesweeper; prints mine_or_safe dictionary (final board state)
+    else:
+        print("ERROR: Invalid Input - The total number of mines exceeds the number of positions on the board.")
