@@ -1,0 +1,23 @@
+while not every cell has been queried or flagged
+	# Choose new cell to query.
+	if there are known safe cells
+		choose one to query
+	else
+		choose cell that is least probable to be a mine
+	
+	# Process query and add new map knowledge to knowledge base.
+	if it's a mine
+		record it
+	else
+		note the number of safe cells, mines, and hidden cells around it
+	
+	# Perform logical inference and record derived knowledge in knowledge base.
+	if all cells around a clue must be mines
+		flag them all as mines
+	if all cells around a clue must be safe
+		mark them all as safe
+	use DFS and constraint satisfaction to find every valid configuration of mines in the cells adjacent to clues
+	average over these configurations to find the probability of a mine existing at each cell adjacent to the clues
+
+score agent performance
+print final environment with flags
